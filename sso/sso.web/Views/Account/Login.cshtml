@@ -1,0 +1,33 @@
+﻿
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Login</title>
+</head>
+<body>
+    <input type="button" value="test" id="submit" />
+</body>
+</html>
+<script src="~/lib/jquery/dist/jquery.js"></script>
+<script>
+    $(function () {
+        $("#submit").bind("click", function () {
+            $.ajax({
+                type: "POST",
+                url: "/Account/Login",
+                data: { Name: "admin", Password: "admin" },
+                dataType: "json",
+                success: function (data) {
+                    if (data.status === 200) {
+                        window.location.href = data.data.redirect + "?token=" + data.data.token;
+                    } else {
+                        alert(data.msg);
+                    }
+                }
+            })
+        })
+    })
+</script>
