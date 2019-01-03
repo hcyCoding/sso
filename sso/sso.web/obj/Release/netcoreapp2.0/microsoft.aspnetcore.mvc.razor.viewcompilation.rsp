@@ -1,8 +1,0 @@
-D:\sso.dotnetcore\sso\sso.web
---output-path=obj\Release\netcoreapp2.0\
---application-name=sso.web
---content-root=D:\sso.dotnetcore\sso\sso.web
---file=D:\sso.dotnetcore\sso\sso.web\Views\Account\Index.cshtml
---file=D:\sso.dotnetcore\sso\sso.web\Views\Account\Login.cshtml
---file=D:\sso.dotnetcore\sso\sso.web\Views\_ViewImports.cshtml
---file=D:\sso.dotnetcore\sso\sso.web\Views\_ViewStart.cshtml
