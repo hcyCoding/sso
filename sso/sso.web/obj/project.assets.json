@@ -13223,11 +13223,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\sso.dotnetcore\\sso\\sso.web\\sso.web.csproj",
+      "projectUniqueName": "D:\\Git\\sso\\sso\\sso.web\\sso.web.csproj",
       "projectName": "sso.web",
-      "projectPath": "D:\\sso.dotnetcore\\sso\\sso.web\\sso.web.csproj",
+      "projectPath": "D:\\Git\\sso\\sso\\sso.web\\sso.web.csproj",
       "packagesPath": "C:\\Users\\CAXA\\.nuget\\packages\\",
-      "outputPath": "D:\\sso.dotnetcore\\sso\\sso.web\\obj\\",
+      "outputPath": "D:\\Git\\sso\\sso\\sso.web\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
