@@ -5,8 +5,8 @@ using Microsoft.Extensions.DependencyInjection;
 using Newtonsoft.Json;
 using sso.web.Configure.CorsConfig;
 using sso.web.Configure.DIConfig;
-using sso.web.Filter;
-using sso.web.Infrastructure.Configuration;
+using sso.web.Infrastructure.GlobleException;
+using sso.web.MiddleWare;
 
 namespace sso.web
 {
@@ -51,8 +51,11 @@ namespace sso.web
             }
             else
             {
-                //app.UseExceptionHandler("/Home/Error");
+                //生产环境全局异常捕捉
+                app.UseExceptionHandler(builder => builder.Run(async context => await GlobleExceptionHandler.ExceptionHandler(context)));
             }
+
+            app.UseNotFoundHandler();  //404异常捕捉
 
             app.UseStaticFiles();
 

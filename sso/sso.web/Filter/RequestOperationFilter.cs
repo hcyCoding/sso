@@ -47,10 +47,6 @@ namespace sso.web.Filter
                     //发放令牌并重定向
                     context.HttpContext.Response.Redirect(Referrence + "?token=" + Token);
                 }
-                else
-                {
-                    context.HttpContext.Response.Redirect(Referrence);
-                }
             }
         }
     }

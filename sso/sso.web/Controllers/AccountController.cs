@@ -2,7 +2,9 @@
 using Microsoft.AspNetCore.Mvc;
 using sso.web.Filter;
 using sso.web.Infrastructure.Status;
+using sso.web.Models;
 using sso.web.Service;
+using System.Diagnostics;
 
 namespace sso.web.Controllers
 {
@@ -25,6 +27,11 @@ namespace sso.web.Controllers
         public IActionResult Login()
         {
             return View();
+        }
+
+        public IActionResult Error()
+        {
+            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
 
         /// <summary>
@@ -75,6 +82,7 @@ namespace sso.web.Controllers
             {
                 return Json(new ResponseModel(ResponseStatus.ErrorParameters, "缺少参数Token！"));
             }
+
             var result = _accountService.GetUserName(Token, HttpContext);
             return Json(result);
         }

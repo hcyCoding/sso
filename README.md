@@ -1,6 +1,6 @@
 
 
-  基于asp.net core mvc实现sso登陆
+  基于asp.net core mvc实现sso登陆（Token方式）
   
   主要技术
   
@@ -8,8 +8,8 @@
 	
 	2.使用Dapper进行数据库操作，并实现数据仓储
 	
-	3.过滤器
+	3.过滤器，中间件
 	
-	4.Redis作为缓存服务器
+	4.Redis作为Token信息存储介质
 	
   如有需要可以联系QQ：1303315424

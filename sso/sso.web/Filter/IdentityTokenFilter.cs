@@ -7,6 +7,10 @@ using System;
 
 namespace sso.web.Filter
 {
+    /// <summary>
+    /// 过滤器
+    /// 验证Token是否有效
+    /// </summary>
     public class IdentityTokenFilter : ActionFilterAttribute
     {
         public override void OnActionExecuting(ActionExecutingContext context)
