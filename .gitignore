@@ -1,3 +1,6 @@
 */.vs/
+*/.git/
+*/sso/sso.web/bin/
 appsettings.json
 sso.web.csproj
+.gitignore

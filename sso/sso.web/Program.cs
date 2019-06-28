@@ -19,7 +19,7 @@ namespace sso.web
 
         public static IWebHost BuildWebHost(string[] args) =>
             WebHost.CreateDefaultBuilder(args)
-                .UseIISIntegration()
+                .UseKestrel()
                 .UseStartup<Startup>()
                 .Build();
     }

@@ -39,13 +39,21 @@ namespace sso.web.Filter
                 //拿到之前登陆的令牌
                 string Token = stackExchangeHelper.StringGet(JseSessionId + AppConfig.TokenStr);
                 //判断该域名是否已在服务端注册
-                if (!RegisterUrl.Contains(Domain) && !string.IsNullOrEmpty(Token))
+                if (!string.IsNullOrEmpty(Token))
                 {
-                    //服务端注册本次登陆的域名,并设置过期时间
-                    stackExchangeHelper.ListRightPush(JseSessionId + AppConfig.DomainStr, Domain);
-                    stackExchangeHelper.KeyExpire(JseSessionId + AppConfig.DomainStr, ExpiresTime.ServerExpiresTime);
+                    if (!RegisterUrl.Contains(Domain))
+                    {
+                        //服务端注册本次登陆的域名,并设置过期时间
+                        stackExchangeHelper.ListRightPush(JseSessionId + AppConfig.DomainStr, Domain);
+                        stackExchangeHelper.KeyExpire(JseSessionId + AppConfig.DomainStr, ExpiresTime.ServerExpiresTime);
+                    }
                     //发放令牌并重定向
                     context.HttpContext.Response.Redirect(Referrence + "?token=" + Token);
+                }
+                else
+                {
+                    //Token过期或者没有登陆
+                    context.HttpContext.Response.Redirect("/Account/Login?redirect=" + Helper.UrlEncode(Referrence));
                 }
             }
         }

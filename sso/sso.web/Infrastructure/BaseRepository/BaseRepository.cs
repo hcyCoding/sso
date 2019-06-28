@@ -30,7 +30,7 @@ namespace sso.web.Infrastructure.BaseRepository
             connectionStr = ConfigurationManager.Configuration.GetConnectionString(connection);
         }
 
-        #region  异步
+        #region  同步
 
         /// <summary>
         /// 新增实体
@@ -168,7 +168,7 @@ namespace sso.web.Infrastructure.BaseRepository
         public T Get(object whereParameters = null, List<string> columnParameters = null)
         {
             string columnStr = "*";
-            string strWhere = " Status=0";
+            string strWhere = " 1=1";
 
             if (columnParameters != null)
             {
@@ -206,7 +206,7 @@ namespace sso.web.Infrastructure.BaseRepository
         public List<T> GetList(object whereParameters = null, string dyOrder = null, List<string> columnParameters = null)
         {
             string columnStr = "*";
-            string strWhere = " Status=0";
+            string strWhere = " 1=1";
             string orderStr = "Id";
 
             if (columnParameters != null)
